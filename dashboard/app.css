@@ -1,0 +1,39 @@
+*{box-sizing:border-box}
+body{margin:0;font:14px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:#16212b;background:#f6f8fa}
+header{background:#0e2a3f;color:#fff;padding:22px 28px 18px}
+header h1{margin:0;font-size:26px;letter-spacing:.5px}
+.sub{margin:4px 0 0;color:#bcd3e2;max-width:70ch}
+.stats{margin:10px 0 0;color:#ffd166;font-weight:600}
+section{padding:14px 28px}
+h2{font-size:17px;margin:4px 0 10px}
+#chart-wrap{background:#fff;border-bottom:1px solid #dfe6ec}
+#chart svg{width:100%;height:auto;display:block}
+#controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;background:#fff;border-bottom:1px solid #dfe6ec}
+#controls input[type=search]{flex:1 1 220px;padding:8px 10px;border:1px solid #c3ced7;border-radius:6px;font-size:14px}
+#controls select{padding:8px;border:1px solid #c3ced7;border-radius:6px;font-size:14px;background:#fff}
+.chk{display:flex;gap:6px;align-items:center;font-weight:600}
+.count{padding:8px 28px 0;margin:0;color:#5b6b78}
+table{width:100%;border-collapse:collapse;background:#fff}
+#board{margin:10px 0 0}
+th,td{padding:7px 10px;text-align:left;border-bottom:1px solid #e6ebef;white-space:nowrap}
+th{cursor:pointer;background:#eef2f5;font-size:12px;text-transform:uppercase;letter-spacing:.4px}
+tbody tr{cursor:pointer}
+tbody tr:hover{background:#f0f6fb}
+td.num,th.num{text-align:right}
+.wl{display:inline-block;background:#ffd166;color:#5a3d00;border-radius:10px;padding:0 7px;font-size:11px;font-weight:700;margin-left:6px}
+.neg{color:#b3261e}.pos{color:#137333}
+#detail-wrap{background:#fff;border:1px solid #dfe6ec;border-radius:8px;margin:14px 28px;padding:16px 20px}
+#detail-wrap h2{margin-top:0}
+.factors{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:10px 0}
+.factors div{background:#f2f6f9;border-radius:6px;padding:8px 10px}
+.factors b{display:block;font-size:16px}
+.factors span{font-size:12px;color:#5b6b78}
+#detail ol{margin:8px 0;padding-left:22px}
+#detail li{margin:5px 0}
+button{cursor:pointer;background:#0e2a3f;color:#fff;border:0;border-radius:6px;padding:8px 14px;font-size:13px;font-weight:600}
+button:hover{background:#16486a}
+#comps-wrap{background:#fff;border-top:1px solid #dfe6ec}
+.note{color:#5b6b78;max-width:90ch}
+#method{background:#fff;border-top:1px solid #dfe6ec;color:#33424f}
+#method p{max-width:100ch}
+.foot{color:#5b6b78;font-size:13px}
