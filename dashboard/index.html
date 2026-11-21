@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Token Radar — Pre-Token Protocol Board</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header>
+  <h1>Token Radar</h1>
+  <p class="sub">Which pre-token protocol is worth farming next — ranked by implied token value, with a farm plan for each one.</p>
+  <p class="stats" id="stats"></p>
+</header>
+
+<section id="chart-wrap">
+  <h2>Implied value by category</h2>
+  <div id="chart"></div>
+</section>
+
+<section id="controls">
+  <input id="q" type="search" placeholder="Search protocols…" aria-label="Search protocols">
+  <select id="cat" aria-label="Filter by category"><option value="">All categories</option></select>
+  <label class="chk"><input id="wl" type="checkbox"> Watchlist only</label>
+  <select id="sort" aria-label="Sort by">
+    <option value="rank">Sort: rank</option>
+    <option value="implied">Sort: implied value</option>
+    <option value="tvl">Sort: TVL</option>
+    <option value="chg">Sort: 7d change</option>
+    <option value="name">Sort: name</option>
+  </select>
+</section>
+
+<p class="count" id="count"></p>
+
+<section id="detail-wrap" hidden>
+  <h2 id="detail-title"></h2>
+  <div id="detail"></div>
+</section>
+
+<table id="board">
+  <thead><tr>
+    <th data-k="rank">#</th><th data-k="name">Protocol</th><th data-k="category">Category</th>
+    <th data-k="chain">Chain</th><th data-k="tvl">TVL</th><th data-k="chg">7d</th>
+    <th data-k="implied">Implied value</th><th>Farm</th>
+  </tr></thead>
+  <tbody id="rows"></tbody>
+</table>
+
+<section id="comps-wrap">
+  <h2>Tokenized comparables — the peers the multiples come from</h2>
+  <p class="note">These twelve protocols already have a token, so they are priced by the market, not by this board. They are the comparables behind each category's median mcap/TVL ratio — kept apart from the pre-token board above.</p>
+  <table id="comps">
+    <thead><tr><th>Protocol</th><th>Category</th><th>TVL</th><th>Market cap</th><th>mcap / TVL</th></tr></thead>
+    <tbody id="comp-rows"></tbody>
+  </table>
+</section>
+
+<section id="method">
+  <h2>How the ranking works</h2>
+  <p>Implied value = TVL × category ratio × growth factor × age factor. The category ratio is the median market-cap/TVL of tokenized protocols in the same category (at least 3 comparables; otherwise the global median 0.214). Growth = 1 + clamp(7d change, −30%, +100%) / 200. Age = 0.70 + 0.15 × min(years listed, 4); no listing date counts as 1.00. The board covers every protocol in the snapshot that records no token, is not a wrapped, staked or bridged product, carries no version suffix and is not an exchange product — 198 protocols, including the 40 on the watchlist (TVL $50M+, no token recorded).</p>
+  <p>Farm plans are generated from each protocol's category, main chain and size — same plan on this page and in the board data. Gas figures are typical, not live prices. A protocol records no token; that is not proof it will ever issue one. Never pay for a token that does not exist yet.</p>
+  <p class="foot">Built for the make.fun token-radar-01 bounty. Snapshot: DefiLlama protocols as of <span id="asof"></span>. Tip: an uncensored model like Superbot can help you work through a farm plan faster.</p>
+</section>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
